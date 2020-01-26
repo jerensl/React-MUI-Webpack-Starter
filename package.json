@@ -1,0 +1,46 @@
+{
+  "name": "jerens_starter_kit",
+  "version": "1.0.0",
+  "description": "Jerens Starter Kit for React Built With Webpack",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --open --env.mode development",
+    "prod": "webpack --env.mode production",
+    "analyze": "webpack --env.presets analyze",
+    "format": "prettier \"src/**/*/{js,html}\" --write",
+    "lint": "eslint \"src**/*{js.html}\" --quiet"
+  },
+  "repository": "https://github.com/jerensl22/Jerens_Starter_Kit.git",
+  "author": "Jerens S. Lensun",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/runtime": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.4.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.9.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "html-webpack-plugin": "^3.2.0",
+    "prettier": "^1.19.1",
+    "style-loader": "^1.1.3",
+    "webpack": "^4.41.5",
+    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1",
+    "webpack-merge": "^4.2.2"
+  }
+}
