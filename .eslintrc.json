@@ -13,7 +13,7 @@
     "react-hooks/exhaustive-deps": "warn",
     "no-console": "warn"
   },
-  "plugins": ["react", "import", "jsx-a11y", "react-hooks"],
+  "plugins": ["react", "import", "jsx-a11y", "react-hooks", "prettier"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2018,

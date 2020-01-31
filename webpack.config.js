@@ -1,10 +1,10 @@
-const path = require("path");
+const path = require("path")
 
-const merge = require("webpack-merge");
-const webpack = require("webpack");
+const merge = require("webpack-merge")
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
-const modeConfig = env => require(`./config/webpack.${env}`)(env);
-const loadPresets = require("./config/loadPresets");
+const modeConfig = env => require(`./config/webpack.${env}`)(env)
+const loadPresets = require("./config/loadPresets")
 
 module.exports = ({ mode = "production", presets = [] }) => {
   return merge(
@@ -13,24 +13,31 @@ module.exports = ({ mode = "production", presets = [] }) => {
       entry: "./src/index.js",
       output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
       },
       module: {
         rules: [
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            use: ["babel-loader", "eslint-loader"]
+            use: ["babel-loader", "eslint-loader"],
           },
           {
             test: /\.css$/,
-            use: ["style-loader", "css-loader"]
-          }
-        ]
+            use: ["style-loader", "css-loader"],
+          },
+          {
+            test: /\.(png|svg|jpg|gif)$/,
+            use: ["file-loader"],
+          },
+        ],
       },
-      plugins: [new webpack.ProgressPlugin()]
+      plugins: [new CleanWebpackPlugin()],
     },
     modeConfig(mode),
-    loadPresets({ mode, presets })
-  );
-};
+    loadPresets({
+      mode,
+      presets,
+    }),
+  )
+}
