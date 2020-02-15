@@ -5,7 +5,8 @@ const HTMLWebpackPlugin = require("html-webpack-plugin")
 module.exports = () => ({
   plugins: [
     new HTMLWebpackPlugin({
-      template: "./src/index.html",
+      title: "Development",
+      template: "src/index.html",
     }),
   ],
   devServer: {
@@ -15,5 +16,9 @@ module.exports = () => ({
     port: 2202,
     publicPath: "/",
     historyApiFallback: true,
+  },
+  watchOptions: {
+    poll: 1000,
+    ignored: ["node_modules"],
   },
 })
