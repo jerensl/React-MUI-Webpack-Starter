@@ -1,4 +1,4 @@
-const HTMLWebpackPlugin = require("html-webpack-plugin");
+const HTMLWebpackPlugin = require("html-webpack-plugin")
 
 module.exports = () => ({
   plugins: [
@@ -13,8 +13,25 @@ module.exports = () => ({
         keepClosingSlash: true,
         minifyJS: true,
         minifyCSS: true,
-        minifyURLs: true
-      }
-    })
-  ]
-});
+        minifyURLs: true,
+      },
+    }),
+  ],
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all",
+        },
+      },
+    },
+  },
+  resolve: {
+    alias: {
+      "react-dom$": "react-dom/profiling",
+      "scheduler/tracing": "scheduler/tracing-profiling",
+    },
+  },
+})
