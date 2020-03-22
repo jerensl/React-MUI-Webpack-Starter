@@ -1,15 +1,15 @@
 {
-  "name": "jerens_starter_kit",
+  "name": "rmw_starter_kit",
   "version": "1.0.0",
-  "description": "Jerens Starter Kit for React Built With Webpack",
+  "description": "RMUIW for React Material Ui Built With Webpack",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --env.mode development",
-    "prod": "webpack --env.mode production",
-    "compres": "webpack --env.presets compres",
-    "analyze": "webpack --env.presets analyze",
-    "format": "prettier \"src/**/*/{js,html}\" --write",
-    "lint": "eslint \"src**/*{js.html}\" --quiet"
+    "start:dev": "webpack-dev-server --open --env.mode development",
+    "start:format": "prettier \"src/**/*/{js,html}\" --write",
+    "start:lint": "eslint \"src**/*{js.html}\" --quiet",
+    "build:prod": "webpack --env.mode production",
+    "build:compres": "webpack --env.presets compres",
+    "build:analyze": "webpack --env.presets analyze"
   },
   "repository": "https://github.com/jerensl22/Jerens_Starter_Kit.git",
   "author": "Jerens S. Lensun",
