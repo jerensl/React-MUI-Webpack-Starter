@@ -2,7 +2,7 @@ on:
   schedule:
     - cron: 0 0 * * 2
 
-name: Auto Upgrade Package
+name: Package Upgrade
 
 jobs:
   package-update:
