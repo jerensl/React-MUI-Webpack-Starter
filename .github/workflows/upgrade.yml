@@ -1,21 +1,13 @@
-<<<<<<< HEAD
 name: Auto Upgrade Package
 
 on:
   schedule:
     - cron: 0 0 * * 3
 
-=======
-on:
-  schedule:
-  - cron: 0 0 * * 3
-name: Update
->>>>>>> master
 jobs:
   package-update:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< HEAD
       - uses: actions/checkout@master
       - name: set remote url
         run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.UPDATE_TOKEN }}@github.com/$GITHUB_REPOSITORY
@@ -29,18 +21,3 @@ jobs:
           UPDATE_COMMAND: yarn
         with:
           args: upgrade --latest
-=======
-    - uses: actions/checkout@master
-    - name: set remote url
-      run: git remote set-url --push origin https://$GITHUB_ACTOR:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
-    - name: auto-upgrade
-      uses: taichi/actions-package-update@master
-      env:
-        AUTHOR_EMAIL: jerenslensun@gmail.com
-        AUTHOR_NAME: Jerens
-        EXECUTE: "true"
-        GITHUB_TOKEN: ${{ secrets.UPDATE_TOKEN }}
-        UPDATE_COMMAND: yarn
-      with:
-        args: upgrade --latest
->>>>>>> master
