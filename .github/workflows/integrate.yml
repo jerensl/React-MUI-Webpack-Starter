@@ -6,12 +6,12 @@ on:
 
 jobs:
   test_pull_request:
-    runs_on: ubuntu_latest
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/chechout@v2
+      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm ci
-      - run: npm start:test
-      - run: npm run build:prod
+      - run: yarn install
+      - run: yarn start:test
+      - run: yarn run build:prod
