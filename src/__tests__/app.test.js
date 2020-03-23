@@ -9,6 +9,6 @@ describe("app", () => {
   it("Should show Jerens", () => {
     const wrapper = shallow(<App />)
     const text = wrapper.find("h1")
-    expect(text.text()).toBe("Hi JerenS")
+    expect(text.text()).toBe("Hi Jerens")
   })
 })
