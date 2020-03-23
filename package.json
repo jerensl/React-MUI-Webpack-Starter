@@ -7,6 +7,7 @@
     "start:dev": "webpack-dev-server --open --env.mode development",
     "start:format": "prettier \"src/**/*/{js,html}\" --write",
     "start:lint": "eslint \"src**/*{js.html}\" --quiet",
+    "start:test": "jest",
     "build:prod": "webpack --env.mode production",
     "build:compres": "webpack --env.presets compres",
     "build:analyze": "webpack --env.presets analyze"
