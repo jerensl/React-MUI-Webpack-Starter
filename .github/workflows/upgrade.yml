@@ -1,6 +1,6 @@
 on:
   schedule:
-    - cron: 0 0 * * 3
+    - cron: 0 0 * * 2
 
 name: Auto Upgrade Package
 
